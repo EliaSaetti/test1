@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color:rgb(113, 165, 243)
+}
+
+.right {
+  right: 0;
+  background-color:#97be21;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="split left" >
+  <div class="centered">
+      <a href="index.html">
+    <img src="tazza.jpg" alt="JavaScript" class="zoom">
+        </a>
+    <h2>NIENTE SCORCIATOIE PER LE <br> BASI DELLA PROGRAMMAZIONE
+    </h2>
+    <p>Impara insieme a noi a programmare ecc...</p>
+  </div>
+</div>
+
+
+
+<div class="split right">
+  <div class="centered" class="zoom">
+    <a href="edCivica.html">
+    <img src="edCivica.jpg" alt="Educazione civica" class="zoom">   
+    </a>
+    <h2>EDUCAZIONE CIVICA</h2>
+    <p>Scopri come essere una persona migliore su internet ecc...</p>
+  </div>
+</div>
+
+
+</body>
+</html> 
