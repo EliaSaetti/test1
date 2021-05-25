@@ -3,208 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <title>Tutorial JavaScript</title>
+<link href="design.css" rel="stylesheet" type="text/css">
 <style id="applicationStylesheet" type="text/css">
-
-	.rettangolo_4 {
-        opacity:0.5961;
-        top: 0px;
-        left: 0px;
-        width: auto;
-        height: 550px;
-        background:rgba(33,105,221,152);
-	
-    }
-	.__p__niente_scorciatoie_per_le__basi_della_programmazione {
-		padding-top: 14%;
-		top: 205px;
-		left: 425px;
-		width: 1053px;
-		height: 208px;
-		overflow: hidden;
-		font-family: Helvetica Neue;
-		font-size: 60px;
-		text-align: center;
-		color:#ffffff;
-	}
-	.rettangolo_7 {
-		opacity:0.3529;
-		top: 825px;
-		left: 0px;
-		width: auto;
-		height: 55px;
-		background:rgba(33,105,221,90);
-	}
-	.rettangolo_8 {
-		opacity:0.1137;
-		top: 899px;
-		left: 0px;
-		width: auto;
-		height: 55px;
-		background:rgba(33,105,221,29);
-	}
-
-	/* --- Formattazione testo --- */
-	p{
-		text-align: justify;
-	}
-	a {
-		color: #0833c0;
-		font-style: italic;
-	}
-	a:hover{
-		color: red;
-		font-style: italic;
-	}
-	
-
-	/* --- Sezione css per quiz --- */
-	.invisibile{
-		display: none;
-	}
-	.visibile{
-		display: block;
-	}
-	.colorTitle{
-		color:#ffffff;
-	}
-	.bottoneGo1{
-		color: green;
-	}
-	.chek1B{
-		width: 10px;
-		display: none;
-	}
-	.process-wrapper {
-		margin:auto;
-		max-width:1080px;
-	}
-	#progress-bar-container {
-		position:relative;
-		width:90%;
-		margin:auto;
-		height:100px;
-		margin-top:65px;
-	}
-	#progress-bar-container ul {
-		padding:0;
-		margin:0;
-		padding-top:15px;
-		z-index:9999;
-		position:absolute;
-		width:100%;
-		margin-top:-40px
-	}
-	#progress-bar-container li:before {
-		content:" ";
-		display:block;
-		margin:auto;
-		width:30px;
-		height:30px;
-		border-radius:50%;
-		border:solid 2px #aaa;
-		transition:all ease 0.3s;
-    }	
-	#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
-		border:solid 2px #fff;   	 
-		background: linear-gradient(to right, #0833c0 0%,rgb(113, 165, 243) 100%); 
-	}
-	#progress-bar-container li {
-		list-style:none;
-		float:left;
-		width:20%;
-		text-align:center;
-		color:#aaa;
-		text-transform:uppercase;
-		font-size:11px;
-		cursor:pointer;
-		font-weight:700;
-		transition:all ease 0.2s;
-		vertical-align:bottom;
-		height:60px;
-		position:relative;
-	}	
-	#progress-bar-container li .step-inner {
-		position:absolute;
-		width:100%;
-		bottom:0;
-    	font-size: 14px;
-	}
-	#progress-bar-container li.active, #progress-bar-container li:hover {
-		color:#444;
-	}
-	#progress-bar-container li:after {
-		content:" ";
-		display:block;
-		width:6px;
-		height:6px;
-		background:#777;
-		margin:auto;
-		border:solid 7px #fff;
-		border-radius:50%;
-		margin-top:40px;
-		box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
-		transition:all ease 0.2s;
-     }
-	#progress-bar-container li:hover:after {
-		background:#555;
-	}
-	#progress-bar-container li.active:after {
-		background:#207893;
-	}
-	#progress-bar-container #line {
-		width:80%;
-		margin:auto;
-		background: #eee;
-		height:6px;
-		position:absolute;
-		left:10%;
-		top:57px;
-		z-index:1;
-		border-radius:50px;
-		transition:all ease 0.9s;
-	}
-	#progress-bar-container #line-progress {
-		content:" ";
-		width:3%;
-		height:100%;
-		background: #207893;	 
-		background: linear-gradient(to right, #207893 0%,#2ea3b7 100%); 
-		position:absolute;
-		z-index:2;
-		border-radius:50px;
-		transition:all ease 0.9s;
-	}
-	#progress-content-section {
-		width:90%;
-		margin: auto;
-		background: #f3f3f3;
-		border-radius: 4px;
-	}
-	#progress-content-section .section-content {
-		padding:30px 40px;
-	}
-	#progress-content-section .section-content h2 {
-		font-size:17px;
-		text-transform:uppercase;
-		color:#333;
-		letter-spacing:1px;
-	}
-	#progress-content-section .section-content p {
-		font-size:16px;
-		line-height:1.8em;
-		color:#777;
-	}
-	#progress-content-section .section-content {
-		display:none;
-		animation: FadeInUp 700ms ease 1;
-		animation-fill-mode:forwards;
-		transform:translateY(15px);
-		opacity:0;
-		}
-	#progress-content-section .section-content.active {
-		display:block;
-	}
-
 	@keyframes FadeInUp {
 		0% {
 			transform:translateY(15px);
@@ -216,7 +16,6 @@
 			opacity:1;
 		}
 	}	
-
 </style>
 
 </head>
@@ -254,7 +53,7 @@
 			<br>
 			Il codice può essere scritto sia nello stesso file con estensione html ma anche in un file esterno con estensione js.
 			<br>
-			<p><img src="imgJSesterno.png" width="45%" height="30%"></p>
+			<p><img src="images/imgJSesterno.png" width="45%" height="30%"></p>
 			<p><b>Perchè si chiama Java Script?</b><br>Quando JavaScript è stato creato, inizialmente aveva un altro nome "LiveScript". Anche Java nativo era molto popolare, quindi si è deciso che il posizionamento di un nuovo linguaggio come "fratello minore" di java sarebbe stato d'aiuto.
 			Man mano che si è evoluto, JavaScript è diventato un linguaggio completamente indipendente con una porpria specifica chiamata <a href="https://it.wikipedia.org/wiki/ECMAScript">ECMAScript</a> e non ha alcuna relazione con Java.</p>
 			<p><b>Cosa può fare JavaScript nel browser?</b><br> Il moderno JavaScript è un linguaggio di programmazione "sicuro". Non fornisce un accesso di basso livello alla memoria o alla CPU, perché inizialmente è stato creato per i browser che non lo richiedono.
@@ -278,14 +77,14 @@
 				<p>
 					<b>La struttura del codice</b><br>
 					Il file esterno con estensione js o la sezione di codice tra i tag <i> script </i> è strtturato nel seguente modo: <br>
-					<p><img src="ImgFunzioneF.png" width="40%" height="30%"></p>
+					<p><img src="images/ImgFunzioneF.png" width="40%" height="30%"></p>
 					<p>In questo modo viene creata la funzione <b>nomeFunzione</b> (a) senza parametri. Spesso si passa il form contenuto nel file HTML.<br>
 					All'interno delle graffe vi si può sviluppare la struttura del codice. (b)<br></p>
 					<p>
 						<b>Le variabili</b><br>
 						La maggior parte delle volte, un'applicazione JavaScript deve lavorare con le informazioni e per memorizzarle vengono utlizzate le <b>variabili</b>. Una variabile è una "memoria denominata" per i dati. Possiamo utilizzare le variabili per memorizzare gadget, visitatori e altri dati.<br>
 						Per creare una variabile in JavaScript, utilizza la parola chiave. <b>var</b> <br>
-						<p><img src="ImgVariabili.png" width="40%" height="30%"></p>
+						<p><img src="images/ImgVariabili.png" width="40%" height="30%"></p>
 						<p>Ogni variabile non ha bisogno che le si venga specificata se String, int, char ecc. Nell'immagine si nota come qualsiasi tipo di dato possa essere affidato ad una variabile.</p>
 					</p>
 				</p>
@@ -342,31 +141,31 @@
 			I <b>cicli </b>, detti anche strutture iterative, hanno una grande importanza in programmazione.<br> Grazie ad essi è possibile eseguire, per mezzo di poche righe di codice, un numero potenzialmente infinito di istruzioni.<br>
 			<br>
 			<b>IF</b>
-			<br><img src="ifCondizioneF.png" width="25%"><br>
+			<br><img src="images/ifCondizioneF.png" width="25%"><br>
 			Se si verifica la <b>condizione</b> eseguirà (a), in ogni caso non si verifichi la <b>condizione</b> verrà eseguito il codice di (b).<br>
 			<hr width=100% size=1 color="grey">
 		</p>
 		<p>
 			<b>ELSE IF</b><br>
-			<img src="elseIfF.png" width="30%"><br>
+			<img src="images/elseIfF.png" width="30%"><br>
 			Se si verifica la <b>condizione</b> eseguirà (a), se si verifica la <b>condizione2</b> verrà eseguito (b), se si verifica la <b>condizione3</b> verrà eseguito (c). Se non si verificano queste condizioni non verrà eseguito nulla.<br>
 			<hr width=100% size=1 color="grey">
 		</p>
 		<p>
 			<b>DO WHILE</b><br>
-			<img src="imgDoWhile.png" width="30%"><br>
+			<img src="images/imgDoWhile.png" width="30%"><br>
 			Esegue (a) fino a quando non si verifica la <b>condizione</b>.<br>
 			<hr width=100% size=1 color="grey">
 		</p>
 		<p>
 			<b>WHILE DO</b><br>
-			<img src="imgWhileDo.png" width="30%"><br>
+			<img src="images/imgWhileDo.png" width="30%"><br>
 			Se si verfica la <b>condizione</b> eseguirà (a).<br>
 			<hr width=100% size=1 color="grey">
 		</p>
 		<p>
 			<b>FOR</b><br>
-			<img src="imgFor.png" width="35%"><br>
+			<img src="images/imgFor.png" width="35%"><br>
 			Eseguirà (a) tante volte quante <b>NVOLTE</b>.<br>
 		</p>
 		<br><input type="button" value="Prova tu" id="btnGo2" class="bottoneGo1" onclick="provaTu2(this.form)">
@@ -410,23 +209,58 @@
 		<h2>FORMATTAZIONE TESTO</h2>
 		<form>
 			<div class="visibile" id="sezioneFormattazioneTesto">
-				var 
-				
-				<br><input type="button" value="Prova tu" id="btnGo3" class="bottoneGo1" onclick="provaTu3(this.form)">
+			<p>
+				<b>Estrarre un carattere da una stringa</b> <br>
+				<img src="images/imgCharAt.png" width="45%"><br>
+				JavaScript non prevede un tipo di dato specifico per i caratteri. Per estrarre un carattere da una stringa possiamo sfruttare il metodo charAt() che prende come argomento la posizione del carattere all’interno della stringa partendo da zero.
+				<hr width=100% size=1 color="grey">
+			</p>
+			<p>
+				<b>Substr, estrarre una sottostringa</b><br>
+				<img src="images/imgSubstr.png" width="45%"><br>
+				Per estrarre una sottostringa da una stringa possiamo sfruttare diversi approcci. Ad esempio, il metodo substr() ci consente di estrarre una sottostringa di un certo numero di caratteri a partire da una posizione.
+				La parte estratta sarà: <i>aro</i>
+				<hr width=100% size=1 color="grey">
+			</p>
+			<p>
+				<b>Substring, estrarre una sottostringa</b><br>
+				<img src="images/imgSubstring.png" width="45%"><br>
+				Il metodo substring() estrae una sottostringa compresa tra due posizioni.
+				La parte estratta sarà: <i>arol</i>
+				<hr width=100% size=1 color="grey">
+			</p>
+			<p>
+				<b>Split, creare array dalle stringhe</b><br>
+				<img src="images/imgSplit.png" width="45%"><br>
+				Possiamo creare un array a partire da una stringa, grazie al metodo split(). Se invochiamo il metodo senza passare alcun parametro otteniamo un array di un solo elemento costituito dalla stringa stessa.
+				<br>
+			</p>
+			<p>
+				<b>Split, creare array dalle stringhe</b><br>
+				<img src="images/imgSplit2.png" width="45%"><br>
+				Se passiamo come argomento una stringa, essa verrà considerata come separatore ed otterremo un array i cui elementi sono le sottostringhe delimitate dal separatore.
+				<hr width=100% size=1 color="grey">
+			</p>
+			<p>
+				<b>Maiuscole e minuscole, toLowerCase e toUpperCase</b><br>
+				<img src="images/imgToAppercase.png" width="45%"><br>
+				Tra gli altri metodi più comunemente usati ricordiamo toLowerCase() e toUpperCase() per ottenere una versione della stringa rispettivamente in caratteri minuscoli o maiuscoli.
+				<hr width=100% size=1 color="grey">
+			</p>
 			</div>
-			<div class="invisibile" id = "quiz2"> 
-		
-
-				<br><p><input type="button" value="CONFERMA" id="btnConferma3"  onclick="controllaQuiz3(this.form)"><label id="numeriTot3">
-				<input type="button" value="TORNA INDIETRO" id="btnIndietro" onclick="location.href='index.html'"><label id="numeriTot1"></label></p>
-			</div>
+			
 		</form>
 		<p></p>
 	</div>
 	
 	<div class="section-content analysis">
 		<h2>ARRAY</h2>
-		<p></p>
+		<p>
+			Come visto nella sessione precedente la dichiarazione di un vettore avviene in questo modo:
+			<br><img src="images/imgArray.png" width="45%"><br><br>
+			<b>Inserimento di un valore di un vettore all'interno di una variabile.</b>
+			<br><img src="images/ImgVettCompleto.png" width="45%">
+		</p>
 	</div>
 	</div>
 </div>
