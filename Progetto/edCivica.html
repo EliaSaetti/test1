@@ -1,424 +1,502 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8"/>
-<title>Tutorial JavaScript</title>
-<style id="applicationStylesheet" type="text/css">
+	<meta charset="utf-8" />
+	<title>Tutorial JavaScript</title>
+	<style id="applicationStylesheet" type="text/css">
+		.rettangolo_4 {
+			opacity: 0.5961;
+			top: 0px;
+			left: 0px;
+			width: auto;
+			height: 550px;
+			background: #03a503;
 
-	.rettangolo_4 {
-        opacity:0.5961;
-        top: 0px;
-        left: 0px;
-        width: auto;
-        height: 550px;
-        background:#03a503;
-	
-    }
-	._il_cyberbullismo{
-		padding-top: 14%;
-		top: 205px;
-		left: 425px;
-		width: 1053px;
-		height: 208px;
-		overflow: hidden;
-		font-family: Helvetica Neue;
-		font-size: 60px;
-		text-align: center;
-		color:#ffffff;
-	}
-	.rettangolo_7 {
-		opacity:0.3529;
-		top: 825px;
-		left: 0px;
-		width: auto;
-		height: 55px;
-		background:#218621;
-	}
-	.rettangolo_8 {
-		opacity:0.1137;
-		top: 899px;
-		left: 0px;
-		width: auto;
-		height: 55px;
-		background:#13ca13;
-	}
-
-	/* --- Formattazione testo --- */
-	p{
-		text-align: justify;
-	}
-	a {
-		color: #0833c0;
-		font-style: italic;
-	}
-	a:hover{
-		color: red;
-		font-style: italic;
-	}
-	
-
-	/* --- Sezione css per quiz --- */
-	.invisibile{
-		display: none;
-	}
-	.visibile{
-		display: block;
-	}
-	.colorTitle{
-		color:#ffffff;
-	}
-	.bottoneGo1{
-		color: green;
-	}
-	.chek1B{
-		width: 10px;
-		display: none;
-	}
-	.process-wrapper {
-		margin:auto;
-		max-width:1080px;
-	}
-	#progress-bar-container {
-		position:relative;
-		width:90%;
-		margin:auto;
-		height:100px;
-		margin-top:65px;
-	}
-	#progress-bar-container ul {
-		padding:0;
-		margin:0;
-		padding-top:15px;
-		z-index:9999;
-		position:absolute;
-		width:100%;
-		margin-top:-40px
-	}
-	#progress-bar-container li:before {
-		content:" ";
-		display:block;
-		margin:auto;
-		width:30px;
-		height:30px;
-		border-radius:50%;
-		border:solid 2px #aaa;
-		transition:all ease 0.3s;
-    }	
-	#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
-		border:solid 2px #fff;   	 
-		background: linear-gradient(to right, #3da523 0%,rgb(33, 112, 39) 100%); 
-	}
-	#progress-bar-container li {
-		list-style:none;
-		float:left;
-		width:20%;
-		text-align:center;
-		color:#aaa;
-		text-transform:uppercase;
-		font-size:11px;
-		cursor:pointer;
-		font-weight:700;
-		transition:all ease 0.2s;
-		vertical-align:bottom;
-		height:60px;
-		position:relative;
-	}	
-	#progress-bar-container li .step-inner {
-		position:absolute;
-		width:100%;
-		bottom:0;
-    	font-size: 14px;
-	}
-	#progress-bar-container li.active, #progress-bar-container li:hover {
-		color:#444;
-	}
-	#progress-bar-container li:after {
-		content:" ";
-		display:block;
-		width:6px;
-		height:6px;
-		background:#777;
-		margin:auto;
-		border:solid 7px #fff;
-		border-radius:50%;
-		margin-top:40px;
-		box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
-		transition:all ease 0.2s;
-     }
-	#progress-bar-container li:hover:after {
-		background:#555;
-	}
-	#progress-bar-container li.active:after {
-		background:#97be21;
-	}
-	#progress-bar-container #line {
-		width:80%;
-		margin:auto;
-		background: #eee;
-		height:6px;
-		position:absolute;
-		left:10%;
-		top:57px;
-		z-index:1;
-		border-radius:50px;
-		transition:all ease 0.9s;
-	}
-	#progress-bar-container #line-progress {
-		content:" ";
-		width:3%;
-		height:100%;
-		background: #97be21;	 
-		background: linear-gradient(to right, #146d23 0%,#0b5e16 100%); 
-		position:absolute;
-		z-index:2;
-		border-radius:50px;
-		transition:all ease 0.9s;
-	}
-	#progress-content-section {
-		width:90%;
-		margin: auto;
-		background: #f3f3f3;
-		border-radius: 4px;
-	}
-	#progress-content-section .section-content {
-		padding:30px 40px;
-	}
-	#progress-content-section .section-content h2 {
-		font-size:17px;
-		text-transform:uppercase;
-		color:#333;
-		letter-spacing:1px;
-	}
-	#progress-content-section .section-content p {
-		font-size:16px;
-		line-height:1.8em;
-		color:#777;
-	}
-	#progress-content-section .section-content {
-		display:none;
-		animation: FadeInUp 700ms ease 1;
-		animation-fill-mode:forwards;
-		transform:translateY(15px);
-		opacity:0;
 		}
-	#progress-content-section .section-content.active {
-		display:block;
-	}
 
-	@keyframes FadeInUp {
-		0% {
-			transform:translateY(15px);
-			opacity:0;
+		._il_cyberbullismo {
+			padding-top: 14%;
+			top: 205px;
+			left: 425px;
+			width: 1053px;
+			height: 208px;
+			overflow: hidden;
+			font-family: Helvetica Neue;
+			font-size: 60px;
+			text-align: center;
+			color: #ffffff;
 		}
-		
-		100% {
-			transform:translateY(0px);
-			opacity:1;
-		}
-	}	
 
-</style>
+		.rettangolo_7 {
+			opacity: 0.3529;
+			top: 825px;
+			left: 0px;
+			width: auto;
+			height: 55px;
+			background: #218621;
+		}
+
+		.rettangolo_8 {
+			opacity: 0.1137;
+			top: 899px;
+			left: 0px;
+			width: auto;
+			height: 55px;
+			background: #13ca13;
+		}
+
+		/* --- Formattazione testo --- */
+		p {
+			text-align: justify;
+		}
+
+		a {
+			color: #0833c0;
+			font-style: italic;
+		}
+
+		a:hover {
+			color: red;
+			font-style: italic;
+		}
+
+
+		/* --- Sezione css per quiz --- */
+		.invisibile {
+			display: none;
+		}
+
+		.visibile {
+			display: block;
+		}
+
+		.colorTitle {
+			color: #ffffff;
+		}
+
+		.bottoneGo1 {
+			color: green;
+		}
+
+		.chek1B {
+			width: 10px;
+			display: none;
+		}
+
+		.process-wrapper {
+			margin: auto;
+			max-width: 1080px;
+		}
+
+		#progress-bar-container {
+			position: relative;
+			width: 90%;
+			margin: auto;
+			height: 100px;
+			margin-top: 65px;
+		}
+
+		#progress-bar-container ul {
+			padding: 0;
+			margin: 0;
+			padding-top: 15px;
+			z-index: 9999;
+			position: absolute;
+			width: 100%;
+			margin-top: -40px
+		}
+
+		#progress-bar-container li:before {
+			content: " ";
+			display: block;
+			margin: auto;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: solid 2px #aaa;
+			transition: all ease 0.3s;
+		}
+
+		#progress-bar-container li.active:before,
+		#progress-bar-container li:hover:before {
+			border: solid 2px #fff;
+			background: linear-gradient(to right, #3da523 0%, rgb(33, 112, 39) 100%);
+		}
+
+		#progress-bar-container li {
+			list-style: none;
+			float: left;
+			width: 20%;
+			text-align: center;
+			color: #aaa;
+			text-transform: uppercase;
+			font-size: 11px;
+			cursor: pointer;
+			font-weight: 700;
+			transition: all ease 0.2s;
+			vertical-align: bottom;
+			height: 60px;
+			position: relative;
+		}
+
+		#progress-bar-container li .step-inner {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			font-size: 14px;
+		}
+
+		#progress-bar-container li.active,
+		#progress-bar-container li:hover {
+			color: #444;
+		}
+
+		#progress-bar-container li:after {
+			content: " ";
+			display: block;
+			width: 6px;
+			height: 6px;
+			background: #777;
+			margin: auto;
+			border: solid 7px #fff;
+			border-radius: 50%;
+			margin-top: 40px;
+			box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+			transition: all ease 0.2s;
+		}
+
+		#progress-bar-container li:hover:after {
+			background: #555;
+		}
+
+		#progress-bar-container li.active:after {
+			background: #97be21;
+		}
+
+		#progress-bar-container #line {
+			width: 80%;
+			margin: auto;
+			background: #eee;
+			height: 6px;
+			position: absolute;
+			left: 10%;
+			top: 57px;
+			z-index: 1;
+			border-radius: 50px;
+			transition: all ease 0.9s;
+		}
+
+		#progress-bar-container #line-progress {
+			content: " ";
+			width: 3%;
+			height: 100%;
+			background: #97be21;
+			background: linear-gradient(to right, #146d23 0%, #0b5e16 100%);
+			position: absolute;
+			z-index: 2;
+			border-radius: 50px;
+			transition: all ease 0.9s;
+		}
+
+		#progress-content-section {
+			width: 90%;
+			margin: auto;
+			background: #f3f3f3;
+			border-radius: 4px;
+		}
+
+		#progress-content-section .section-content {
+			padding: 30px 40px;
+		}
+
+		#progress-content-section .section-content h2 {
+			font-size: 17px;
+			text-transform: uppercase;
+			color: #333;
+			letter-spacing: 1px;
+		}
+
+		#progress-content-section .section-content p {
+			font-size: 16px;
+			line-height: 1.8em;
+			color: #777;
+		}
+
+		#progress-content-section .section-content {
+			display: none;
+			animation: FadeInUp 700ms ease 1;
+			animation-fill-mode: forwards;
+			transform: translateY(15px);
+			opacity: 0;
+		}
+
+		#progress-content-section .section-content.active {
+			display: block;
+		}
+
+		@keyframes FadeInUp {
+			0% {
+				transform: translateY(15px);
+				opacity: 0;
+			}
+
+			100% {
+				transform: translateY(0px);
+				opacity: 1;
+			}
+		}
+	</style>
 
 </head>
+
 <body>
 	<!--TITOLO PRINCIPALE-->
-	<div class="rettangolo_4"  ><center><div class="_il_cyberbullismo" >
-		IL <br/>CYBERBULLISMO
-	</div></center></div>
-	<div class="rettangolo_7"  ></div>
-	<div class="rettangolo_8"  ></div>
-	
+	<div class="rettangolo_4">
+		<center>
+			<div class="_il_cyberbullismo">
+				IL <br />CYBERBULLISMO
+			</div>
+		</center>
+	</div>
+	<div class="rettangolo_7"></div>
+	<div class="rettangolo_8"></div>
+
 	<!--TITOLI BARRA-->
 	<div class="process-wrapper">
 		<div id="progress-bar-container">
 			<ul>
-				<li class="step step01 active"><div class="step-inner">COS'E'</div></li>
-				<li class="step step02"><div class="step-inner">LE BASI</div></li>
-				<li class="step step03"><div class="step-inner">DIVERSI TIPI </div></li>
-				<li class="step step04"><div class="step-inner">COSA FARE</div></li>
-				<li class="step step05"><div class="step-inner">QUIZ</div></li>
+				<li class="step step01 active">
+					<div class="step-inner">COS'E'</div>
+				</li>
+				<li class="step step02">
+					<div class="step-inner">LE BASI</div>
+				</li>
+				<li class="step step03">
+					<div class="step-inner">DIVERSI TIPI </div>
+				</li>
+				<li class="step step04">
+					<div class="step-inner">COSA FARE</div>
+				</li>
+				<li class="step step05">
+					<div class="step-inner">QUIZ</div>
+				</li>
 			</ul>
-	
-		<div id="line">
-			<div id="line-progress"></div>
+
+			<div id="line">
+				<div id="line-progress"></div>
+			</div>
 		</div>
-	</div>
 
 
 
-	<div id="progress-content-section">
-		<div class="section-content discovery active">
-			<h2>COS'E' IL CYBERBULLISMO</h2>
+		<div id="progress-content-section">
+			<div class="section-content discovery active">
+				<h2>COS'E' IL CYBERBULLISMO</h2>
 				<p>
 					Il <b>cyberbullismo</b>(detto anche "bullismo etettronico") è una forma di prepotenza virtuale
-                    attuata attraverso l'uso dei nuovi media,
-                    dai cellulari a tutto ciò che abbia una connessione a Internet. Come il bullismo tradizionale è una
-                    forma di prevaricazione e di oppressione reiterata nel tempo,
-                    perpetrata da una persona o da un gruppo di persone più potenti nei confronti di un'altra percepita
-                    come più debole.
+					attuata attraverso l'uso dei nuovi media,
+					dai cellulari a tutto ciò che abbia una connessione a Internet. Come il bullismo tradizionale è una
+					forma di prevaricazione e di oppressione reiterata nel tempo,
+					perpetrata da una persona o da un gruppo di persone più potenti nei confronti di un'altra percepita
+					come più debole.
 				</p>
-		</div>
-	
-	
-	<div class="section-content strategy">
-		<h2>LE CARATTERISTICHE</h2>
-			<p>
-				Le <b>caratteristiche</b> tipiche del bullismo sono l'intenzionalità, la persistenza nel tempo,
-                    l'asimmetria di potere e la natura sociale del fenomeno.
-                    Tuttavia, nel cyberbullismo intervengono anche altri elementi, ad esempio:<br>
-                    <b>-L'impatto</b>: la diffusione tramite Internet è incontrollabile, anche a situazione risolta
-                    poiché video e immagini possono restare online.<br>
-                    <b>-L'anonimato</b>: chi offende online può nascondersi dietro un nickname o false identità.<br>
-                    <b>-L'assenza di confini spaziali</b>: il fenomeno del cyberbullismo può avvenire ovunque e invadere
-                    anche gli spazi personali(la vittima può essere raggiunta facilmente tramite supporti connessi a
-                    Internet).<br>
-                    <b>-La mancanza di limiti temporali</b>: per il cyberbulli, e di conseguenza per le loro vittime, il
-                    giorno e la notte hanno lo stesso valore.<br>
-			</p>	
-	</div>
-</p>
-	<div class="section-content creative">
-		<h2>DIVERSI TIPI DI CYBERBULLISMO</h2>
-			
-		<div class="visibile" id="sezioneCicliInterativi">
-			<p>
-			Esistono diverse modalità per perpetrare azioni di cyberbullismo.<br>
-			<b>-Flaming</b>: messaggi online violenti e volgari mirati a suscitare battaglie verbali.<br>
-			<b>-Harassment</b>: spedizione ripetuta di messaggi offensivi mirati a molestare e/o ferire
-			sentimenti di qualcuno.<br>
-			<b>-Denigrazione</b>: sparlare di qualcuno(via e-mail, SMS, sui social network, ecc.) per
-			danneggiare gratuitamente e con cattiveria la reputazione.<br>
-			<b>-Impersonation</b>: spacciarsi per un'altra persona per spedire messaggi e/o pubblicare testi
-			reprensibili.<br>
-			<b>-Exposure</b>: rivelare informazioni private e/o pubblicare testi reprensibili.<br>
-			<b>-Trickery</b>: ottenere la fiducia di qualcuno con l'inganno per poi condividere con altri le
-			informazioni.<br>
-			<b>-Esclusione</b>: discriminare deliberatamente.<br>
-			<b>-Cyberstalking</b>: molestie, persecuzionmi e denigrazioni ripetute mirate a intimorire altri
-			utenti.<br>
-		</p>
-		</div>
-		
-		
-	</div>
-	
-	<div class="section-content production">
-		<h2>COSA FARE</h2>
-		<p>
-			Per evitare queste pessime situazioni bisogna:<br>
-			<b>-Rispettare</b> gli amici virtuali come gli amici reali.<br>
-			<b>-Se siete vittime</b> di fenomeni di cyberbullismo, ricordatevi di <b>non cancellare</b> le prove
-			in vostro possesso.<br>
-			<b>-Bloccate</b> chi vi infastidisce e, se possibile, segnalate il profilo agli amministratori del
-			sito o social network.<br>
-			<b>-Parlate dei vostri problemi</b> con qualcuno di cui vi fidate: tenersi tutto dentro non risolve
-			le cose<br>
-			<b>-Non "vendicatevi"</b> replicando a tono e mettendovi sullo stesso piano di chi vi attacca:
-			finireste per peggiorare la situaione.<br>
+			</div>
 
-		</p>
-	</div>
-	
-	<div class="section-content analysis">
-		<h2>QUIZ</h2>
-		
-			<form>
+
+			<div class="section-content strategy">
+				<h2>LE CARATTERISTICHE</h2>
 				<p>
-				<b>-</b>Quale <b>tipo</b> di cyberbullismo è una spedizione ripetuta di messaggi offensivi mirati a
-				molestare e/o ferire sentimenti di qualcuno: <select id="quiz1">
-					<option> </option>
-					<option>Trickery</option>
-					<option>Harassment</option>
-					<option>Esclusione</option>
-				</select><label id="rispQuiz1"></label><br>
-				<b>-</b>L' <input type="text" id="quiz2"> è una <b>caratteristica</b> dei social che fa pensare di
-				non essere tracciabili e poter dire quello che si vuole.<br>
-				<b>-</b>Il <b>cyberbullismo</b> è meno pericoloso del bullismo poiché non provoca danni fisici
-				direttamente.<select id="quiz3">
-					<option> </option>
-					<option>Vero</option>
-					<option>Falso</option>
-				</select><br>
-				<b>-</b>Nel caso il bullizzato fossi tu, cosa dovresti fare:<br>
-				<input type="checkbox" id="risp1" name="quiz4">Chiedere aiuto a persone esperte.<br>
-				<input type="checkbox" id="risp2" name="quiz4">Parlarne con gli amici più fidati.<br>
-				<input type="checkbox" id="risp3" name="quiz4">Vendicarsi con il cyberbullo facendogli passare ciò
-				che ha fatto passare a te.<br>
-				<input type="button" value="Controlla" onclick="quiz(this.form)">
+					Le <b>caratteristiche</b> tipiche del bullismo sono l'intenzionalità, la persistenza nel tempo,
+					l'asimmetria di potere e la natura sociale del fenomeno.
+					Tuttavia, nel cyberbullismo intervengono anche altri elementi, ad esempio:<br>
+					<b>-L'impatto</b>: la diffusione tramite Internet è incontrollabile, anche a situazione risolta
+					poiché video e immagini possono restare online.<br>
+					<b>-L'anonimato</b>: chi offende online può nascondersi dietro un nickname o false identità.<br>
+					<b>-L'assenza di confini spaziali</b>: il fenomeno del cyberbullismo può avvenire ovunque e invadere
+					anche gli spazi personali(la vittima può essere raggiunta facilmente tramite supporti connessi a
+					Internet).<br>
+					<b>-La mancanza di limiti temporali</b>: per il cyberbulli, e di conseguenza per le loro vittime, il
+					giorno e la notte hanno lo stesso valore.<br>
+				</p>
+			</div>
 			</p>
-			</form>
-		
+			<div class="section-content creative">
+				<h2>DIVERSI TIPI DI CYBERBULLISMO</h2>
+
+				<div class="visibile" id="sezioneCicliInterativi">
+					<p>
+						Esistono diverse modalità per perpetrare azioni di cyberbullismo.<br>
+						<b>-Flaming</b>: messaggi online violenti e volgari mirati a suscitare battaglie verbali.<br>
+						<b>-Harassment</b>: spedizione ripetuta di messaggi offensivi mirati a molestare e/o ferire
+						sentimenti di qualcuno.<br>
+						<b>-Denigrazione</b>: sparlare di qualcuno(via e-mail, SMS, sui social network, ecc.) per
+						danneggiare gratuitamente e con cattiveria la reputazione.<br>
+						<b>-Impersonation</b>: spacciarsi per un'altra persona per spedire messaggi e/o pubblicare testi
+						reprensibili.<br>
+						<b>-Exposure</b>: rivelare informazioni private e/o pubblicare testi reprensibili.<br>
+						<b>-Trickery</b>: ottenere la fiducia di qualcuno con l'inganno per poi condividere con altri le
+						informazioni.<br>
+						<b>-Esclusione</b>: discriminare deliberatamente.<br>
+						<b>-Cyberstalking</b>: molestie, persecuzionmi e denigrazioni ripetute mirate a intimorire altri
+						utenti.<br>
+					</p>
+				</div>
+
+
+			</div>
+
+			<div class="section-content production">
+				<h2>COSA FARE</h2>
+				<p>
+					Per evitare queste pessime situazioni bisogna:<br>
+					<b>-Rispettare</b> gli amici virtuali come gli amici reali.<br>
+					<b>-Se siete vittime</b> di fenomeni di cyberbullismo, ricordatevi di <b>non cancellare</b> le prove
+					in vostro possesso.<br>
+					<b>-Bloccate</b> chi vi infastidisce e, se possibile, segnalate il profilo agli amministratori del
+					sito o social network.<br>
+					<b>-Parlate dei vostri problemi</b> con qualcuno di cui vi fidate: tenersi tutto dentro non risolve
+					le cose<br>
+					<b>-Non "vendicatevi"</b> replicando a tono e mettendovi sullo stesso piano di chi vi attacca:
+					finireste per peggiorare la situaione.<br>
+
+				</p>
+			</div>
+
+			<div class="section-content analysis">
+				<h2>QUIZ</h2>
+
+				<form>
+					<p>
+						<b>-</b>Quale <b>tipo</b> di cyberbullismo è una spedizione ripetuta di messaggi offensivi
+						mirati a
+						molestare e/o ferire sentimenti di qualcuno: <select id="quiz1">
+							<option> </option>
+							<option>Trickery</option>
+							<option>Harassment</option>
+							<option>Esclusione</option>
+						</select><label id="rispQuiz1"></label><br>
+						<b>-</b>L' <input type="text" id="quiz2"> è una <b>caratteristica</b> dei social che fa pensare
+						di
+						non essere tracciabili e poter dire quello che si vuole.<label id="rispQuiz2"></label><br>
+						<b>-</b>Il <b>cyberbullismo</b> è meno pericoloso del bullismo poiché non provoca danni fisici
+						direttamente.<select id="quiz3">
+							<option> </option>
+							<option>Vero</option>
+							<option>Falso</option>
+						</select><label id="rispQuiz3"></label><br>
+						<b>-</b>Nel caso il bullizzato fossi tu, cosa dovresti fare:<br>
+						<input type="checkbox" id="risp1" name="quiz4">Chiedere aiuto a persone esperte.<label
+							id="rispQuiz4.1"></label><br>
+						<input type="checkbox" id="risp2" name="quiz4">Parlarne con gli amici più fidati.<label
+							id="rispQuiz4.2"></label><br>
+						<input type="checkbox" id="risp3" name="quiz4">Vendicarsi con il cyberbullo facendogli passare
+						ciò
+						che ha fatto passare a te.<label id="rispQuiz4.3"></label><br>
+						<input type="button" value="Controlla" onclick="quiz(this.form)">
+					</p>
+				</form>
+			</div>
+		</div>
 	</div>
-	</div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
- <script>
-    function quiz(form) {
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+		function quiz(form) {
 
-var quiz1=document.getElementById("quiz1").value;
-var quiz2=document.getElementById("quiz2").value;
-var quiz3=document.getElementById("quiz3").value;
+			var quiz1 = document.getElementById("quiz1").value;
+			var quiz2 = document.getElementById("quiz2").value;
+			var quiz3 = document.getElementById("quiz3").value;
 
-if(quiz1!="Harassment"){
-	document.getElementById("rispQuiz1").innerText = " Risposta 1: F ";
-	document.getElementById("rispQuiz1").style.color = "red";
-}
+			if (quiz1 != "Harassment") {
+				document.getElementById("rispQuiz1").innerText = " Risposta 1: ERRATO ";
+				document.getElementById("rispQuiz1").style.color = "red";
+			}
+			else {
+				document.getElementById("rispQuiz1").innerText = " Risposta 2: CORRETTO ";
+				document.getElementById("rispQuiz1").style.color = "green";
+			}
 
-if(quiz2!="anonimato"||"anonimo"){
-	alert("La risposta alla domanda 2 è errata");
-}
+			if (quiz2 != "anonimato" || "anonimo") {
+				document.getElementById("rispQuiz2").innerText = " Risposta 2: ERRATO ";
+				document.getElementById("rispQuiz2").style.color = "red";
+			}
+			else {
+				document.getElementById("rispQuiz2").innerText = " Risposta 2: CORRETTO ";
+				document.getElementById("rispQuiz2").style.color = "green";
+			}
 
-if(quiz3!="Falso"){
-	alert("La risposta alla domanda 3 è errata");
-}
+			if (quiz3 != "Falso") {
+				document.getElementById("rispQuiz3").innerText = " Risposta 3: ERRATO ";
+				document.getElementById("rispQuiz3").style.color = "red";
+			}
+			else{
+				document.getElementById("rispQuiz3").innerText = " Risposta 3: CORRETTO ";
+				document.getElementById("rispQuiz3").style.color = "green";
+			}
 
-if (form.risp1.checked) {
-	alert("La risposta alla domanda 4 non è la prima");
-}
-	if (form.risp2.checked) {
+			if (form.risp1.checked) {
+				document.getElementById("rispQuiz4.1").innerText = " Risposta 4.1: CORRETTO ";
+				document.getElementById("rispQuiz4.1").style.color = "green";
+			}
+			else {
+				document.getElementById("rispQuiz4.1").innerText = " Risposta 4.3: ERRATO ";
+				document.getElementById("rispQuiz4.1").style.color = "red";
+			}
+			if (form.risp2.checked) {
+				document.getElementById("rispQuiz4.2").innerText = " Risposta 4.2: CORRETTO ";
+				document.getElementById("rispQuiz4.2").style.color = "green";
+			}
+			else {
+				document.getElementById("rispQuiz4.2").innerText = " Risposta 4.2: ERRATO ";
+				document.getElementById("rispQuiz4.2").style.color = "red";
+			}
 
-	}
-	if (form.risp3.checked) {
-	alert("La risposta alla domanda 3 non è la terza");
-	}
-}
-    $(".step").click( function() {
-	$(this).addClass("active").prevAll().addClass("active");
-	$(this).nextAll().removeClass("active");
-});
+			if (form.risp3.checked) {
+				document.getElementById("rispQuiz4.3").innerText = " Risposta 4.3: ERRATO ";
+				document.getElementById("rispQuiz4.3").style.color = "red";
+			}
+			else{
+				document.getElementById("rispQuiz4.3").innerText = " Risposta 4.3: CORRETTO ";
+				document.getElementById("rispQuiz4.3").style.color = "green";
+			}
+		}
+		$(".step").click(function () {
+			$(this).addClass("active").prevAll().addClass("active");
+			$(this).nextAll().removeClass("active");
+		});
 
-$(".step01").click( function() {
-	$("#line-progress").css("width", "3%");
-	$(".discovery").addClass("active").siblings().removeClass("active");
-});
+		$(".step01").click(function () {
+			$("#line-progress").css("width", "3%");
+			$(".discovery").addClass("active").siblings().removeClass("active");
+		});
 
-$(".step02").click( function() {
-	$("#line-progress").css("width", "25%");
-	$(".strategy").addClass("active").siblings().removeClass("active");
-});
+		$(".step02").click(function () {
+			$("#line-progress").css("width", "25%");
+			$(".strategy").addClass("active").siblings().removeClass("active");
+		});
 
-$(".step03").click( function() {
-	$("#line-progress").css("width", "50%");
-	$(".creative").addClass("active").siblings().removeClass("active");
-});
+		$(".step03").click(function () {
+			$("#line-progress").css("width", "50%");
+			$(".creative").addClass("active").siblings().removeClass("active");
+		});
 
-$(".step04").click( function() {
-	$("#line-progress").css("width", "75%");
-	$(".production").addClass("active").siblings().removeClass("active");
-});
+		$(".step04").click(function () {
+			$("#line-progress").css("width", "75%");
+			$(".production").addClass("active").siblings().removeClass("active");
+		});
 
-$(".step05").click( function() {
-	$("#line-progress").css("width", "100%");
-	$(".analysis").addClass("active").siblings().removeClass("active");
-});
+		$(".step05").click(function () {
+			$("#line-progress").css("width", "100%");
+			$(".analysis").addClass("active").siblings().removeClass("active");
+		});
 
- 
-    </script>
+
+	</script>
 	<br><br><br><br><br><br>
-	<div class="rettangolo_8"  ></div>
-	<div class="rettangolo_7"  ></div>
-	
-</body>
-</html>
+	<div class="rettangolo_8"></div>
+	<div class="rettangolo_7"></div>
 
+</body>
+
+</html>
