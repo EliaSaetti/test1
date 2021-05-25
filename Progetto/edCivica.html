@@ -330,7 +330,7 @@
 					<option>Trickery</option>
 					<option>Harassment</option>
 					<option>Esclusione</option>
-				</select><br>
+				</select><label id="rispQuiz1"></label><br>
 				<b>-</b>L' <input type="text" id="quiz2"> è una <b>caratteristica</b> dei social che fa pensare di
 				non essere tracciabili e poter dire quello che si vuole.<br>
 				<b>-</b>Il <b>cyberbullismo</b> è meno pericoloso del bullismo poiché non provoca danni fisici
@@ -359,8 +359,10 @@
 var quiz1=document.getElementById("quiz1").value;
 var quiz2=document.getElementById("quiz2").value;
 var quiz3=document.getElementById("quiz3").value;
+
 if(quiz1!="Harassment"){
-	alert("La risposta alla domanda 1 è errata");
+	document.getElementById("rispQuiz1").innerText = " Risposta 1: F ";
+	document.getElementById("rispQuiz1").style.color = "red";
 }
 
 if(quiz2!="anonimato"||"anonimo"){
