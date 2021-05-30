@@ -6,6 +6,7 @@
 	<title>Tutorial JavaScript</title>
 	<link href="design2.css" rel="stylesheet" type="text/css">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 </head>
 
 <body>
@@ -14,7 +15,9 @@
 		<center>
 			<div class="_il_cyberbullismo">
 				IL <br />CYBERBULLISMO
+				
 			</div>
+			<a href="https://agora.ismonnet.it/agora/pluginfile.php/76880/mod_resource/content/1/argomenti_quiz.pdf">TEORIA</a>
 		</center>
 	</div>
 	<div class="rettangolo_7"></div>
@@ -52,6 +55,8 @@
 			<div class="section-content discovery active">
 				<h2>COS'E' IL CYBERBULLISMO</h2>
 				<p>
+
+					
 					Il <b>cyberbullismo</b>(detto anche "bullismo etettronico") è una forma di prepotenza virtuale
 					attuata attraverso l'uso dei nuovi media,
 					dai cellulari a tutto ciò che abbia una connessione a Internet. Come il bullismo tradizionale è una
@@ -122,11 +127,20 @@
 			</div>
 
 			<div class="section-content analysis">
+
+				<div class="visibile" id="quizSetNome">
+						<p>
+							Nome: <input type="text" id="nome"><label id="campoObb" ></label><br>
+							Cognome: <input type="text" id="cognome"><label id="campoObb2"></label><br>
+							<input type="button" value="Iscriviti" id="btnIscriviti" onclick="iscrizione(this.form)">
+						</p>
+				</div>
+				<div class="invisibile" id="quizzone">
 				<h2>QUIZ</h2>
 
 				<form>
 					<p>
-						<b>-</b>Quale <b>tipo</b> di cyberbullismo è una spedizione ripetuta di messaggi offensivi
+						<b>- </b>Quale <b>tipo</b> di cyberbullismo è una spedizione ripetuta di messaggi offensivi
 						mirati a
 						molestare e/o ferire sentimenti di qualcuno: <select id="quiz1">
 							<option> </option>
@@ -134,16 +148,19 @@
 							<option>Harassment</option>
 							<option>Esclusione</option>
 						</select><label id="rispQuiz1"></label><br>
-						<b>-</b>L' <input type="text" id="quiz2"> è una <b>caratteristica</b> dei social che fa pensare
+						<hr width=100% size=1.5 color="green"><br>
+						<b>- </b>L' <input type="text" id="quiz2"> è una <b>caratteristica</b> dei social che fa pensare
 						di
-						non essere tracciabili e poter dire quello che si vuole.<label id="rispQuiz2"></label><br>
-						<b>-</b>Il <b>cyberbullismo</b> è meno pericoloso del bullismo poiché non provoca danni fisici
-						direttamente.<select id="quiz3">
+						non essere tracciabili e poter dire quello che si vuole.<label id="rispQuiz2"></label><br><br>
+						<hr width=100% size=1.5 color="green"><br>
+						<b>- </b>Il <b>cyberbullismo</b> è meno pericoloso del bullismo poiché non provoca danni fisici
+						direttamente.<select id="quiz3"><br>
 							<option> </option>
 							<option>Vero</option>
 							<option>Falso</option>
 						</select><label id="rispQuiz3"></label><br>
-						<b>-</b>Nel caso il bullizzato fossi tu, cosa dovresti fare:<br>
+						<hr width=100% size=1.5 color="green"><br>
+						<b>- </b>Nel caso il bullizzato fossi tu, cosa dovresti fare:<br>
 						<input type="checkbox" id="risp1" name="quiz4">Chiedere aiuto a persone esperte.<label
 							id="rispQuiz4.1"></label><br>
 						<input type="checkbox" id="risp2" name="quiz4">Parlarne con gli amici più fidati.<label
@@ -151,16 +168,46 @@
 						<input type="checkbox" id="risp3" name="quiz4">Vendicarsi con il cyberbullo facendogli passare
 						ciò
 						che ha fatto passare a te.<label id="rispQuiz4.3"></label><br>
-						<input type="button" value="Controlla" onclick="quiz(this.form)">
+						<br>
+						<input type="button" value="Controlla" onclick="quiz(this.form)"><br>
+						Per vedere il tuo punteggio scarica il <i class="btnPdf" onclick="creaPdf()">PDF</i>
 					</p>
 				</form>
+			</div>
 			</div>
 		</div>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script>
+		var nome = "";
+		var cognome = "";
+		var cont = 0;
+
+		function creaPdf(){
+			var doc = new jsPDF();
+			doc.text(20,20, 'Il punteggio di ' + nome + ': ' + cont);
+			doc.addPage();
+			doc.save('punteggio.pdf');
+		}
+
+		function iscrizione(form){
+		nome = document.getElementById("nome").value;
+		cognome = document.getElementById("cognome").value;
+		if(nome == "" || cognome == ""){
+			document.getElementById("campoObb").innerText = "* campo obbligatorio";
+			document.getElementById("campoObb").style.color = "red";
+			document.getElementById("campoObb2").innerText = "* campo obbligatorio";
+			document.getElementById("campoObb2").style.color = "red";
+		}else{
+			document.getElementById("quizzone").style.display = 'block';
+			document.getElementById("quizSetNome").style.display = 'none';
+		}
+
+		
+		}
 		function quiz(form) {
+			
 
 			var quiz1 = document.getElementById("quiz1").value;
 			var quiz2 = document.getElementById("quiz2").value;
@@ -173,6 +220,7 @@
 			else {
 				document.getElementById("rispQuiz1").innerText = " Risposta 2: CORRETTO ";
 				document.getElementById("rispQuiz1").style.color = "green";
+				cont++;
 			}
 
 			if (quiz2 != "anonimato" || "anonimo") {
@@ -182,6 +230,7 @@
 			else {
 				document.getElementById("rispQuiz2").innerText = " Risposta 2: CORRETTO ";
 				document.getElementById("rispQuiz2").style.color = "green";
+				cont++;
 			}
 
 			if (quiz3 != "Falso") {
@@ -191,11 +240,13 @@
 			else{
 				document.getElementById("rispQuiz3").innerText = " Risposta 3: CORRETTO ";
 				document.getElementById("rispQuiz3").style.color = "green";
+				cont++;
 			}
 
 			if (form.risp1.checked) {
 				document.getElementById("rispQuiz4.1").innerText = " Risposta 4.1: CORRETTO ";
 				document.getElementById("rispQuiz4.1").style.color = "green";
+				cont++;
 			}
 			else {
 				document.getElementById("rispQuiz4.1").innerText = " Risposta 4.3: ERRATO ";
@@ -204,6 +255,7 @@
 			if (form.risp2.checked) {
 				document.getElementById("rispQuiz4.2").innerText = " Risposta 4.2: CORRETTO ";
 				document.getElementById("rispQuiz4.2").style.color = "green";
+				cont++;
 			}
 			else {
 				document.getElementById("rispQuiz4.2").innerText = " Risposta 4.2: ERRATO ";
@@ -217,7 +269,9 @@
 			else{
 				document.getElementById("rispQuiz4.3").innerText = " Risposta 4.3: CORRETTO ";
 				document.getElementById("rispQuiz4.3").style.color = "green";
+				cont++;
 			}
+			
 		}
 		$(".step").click(function () {
 			$(this).addClass("active").prevAll().addClass("active");
